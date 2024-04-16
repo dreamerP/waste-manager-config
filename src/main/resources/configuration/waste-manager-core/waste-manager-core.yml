@@ -1,0 +1,41 @@
+server:
+  port: 8085
+servlet:
+    context-path: /api/v1/waste-manager-core
+spring:
+  application:
+    name: WASTE-MANAGER-CORE
+
+  datasource:
+    url: jdbc:h2:file:C:/Users/Patry-PC/test;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    h2:
+      console:
+        enabled: true
+        path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update  
+
+  eureka:
+    client:
+      register-with-eureka: true
+      fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://WastemanagerAdmin:Test@127.0.0.1:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+
+
+
+
